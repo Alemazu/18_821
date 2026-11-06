@@ -7,9 +7,12 @@ import itertools
 #forbidden = ["ab"]
 
 def words_of_len(alphabet, forbidden, d):
+    x=1
     valid = []
     # generate all words 
     for guy in itertools.product(alphabet, repeat=d):
+        #print("we got here! " + str(x))
+        x += 1
         word = ""
         #create flag for if word allowed
         is_allowed = True
@@ -37,16 +40,23 @@ def data(alphabet, forbidden, d):
     print("Number of invalid words: " + str(num_invalid))
     print("Good words: " + str(good_words))
     print("-------------------------------------------------------------------------------------------------")
-    
-#words = words_of_len(2)
 
-#for i in words:
-#    print(i)
+if __name__ == "__main__":
+    #words = words_of_len(2)
 
-data(["a", "b"], ["aba"], 2)
-data(["a", "b"], ["aba"], 3)
-data(["a", "b"], ["aba"], 4)
-data(["a", "b"], ["aba"], 5)
-data(["a", "b"], ["aba"], 6)
-data(["a", "b"], ["aba"], 7)
-data(["a", "b"], ["aba"], 8)
+    #for i in words:
+    #    print(i)
+
+    #data(["a", "b"], ["aba"], 2)
+    #data(["a", "b"], ["aba"], 3)
+    #data(["a", "b"], ["aba"], 4)
+    #data(["a", "b"], ["aba"], 5)
+    #data(["a", "b"], ["aba"], 6)
+    #data(["a", "b"], ["aba"], 7)
+    #data(["a", "b"], ["aba"], 8)
+
+    #data(["a", "b,"], ["aba"], 100)
+    #data(["a", "b"], ["aba", "bab", "aaa"], 20)
+    #data(["a", "b", "c"], ["cc", "ca", "bc", "ab", "ba", "cb", "ac"], 11)
+    #data(["a", "b"], ["aa", "bbb"], 10)
+    print(words_of_len(["a", "b"], ["aba"], 4))
